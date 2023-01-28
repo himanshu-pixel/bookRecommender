@@ -26,18 +26,23 @@ function App() {
       <h1>Book recommender📚</h1>
       <p>Here are the some books that we recommend</p>
       <hr />
-      <div>
+      <div className="main-div">
         {Object.keys(books).map((genre) => (
-          <button onClick={() => genreClickHandler(genre)}>{genre}</button>
+          <button
+            className="primary-button"
+            onClick={() => genreClickHandler(genre)}
+          >
+            {genre}
+          </button>
         ))}
       </div>
-      <hr />
+
       <div>
         <ul>
           {books[selectedGenre].map((book) => (
             <li style={{ listStyle: "none" }}>
-              <div>{book.name}</div>
-              <div>{book.rating}</div>
+              <div className="div-u">{book.name}</div>
+              <div className="div-l">{book.rating}</div>
             </li>
           ))}
         </ul>
